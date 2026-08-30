@@ -1,16 +1,8 @@
 {
-    "version": 2,
-    "name": "my-portfolio",
-    "builds": [
+    "rewrites": [
         {
-            "src": "index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.js"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
