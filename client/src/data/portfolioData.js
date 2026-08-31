@@ -64,6 +64,7 @@ export const projects = [
    WEBSITE GROUPS
 ========================================================= */
 
+
 export const websiteGroups = [
     {
         title: "WordPress",
@@ -73,7 +74,7 @@ export const websiteGroups = [
             {
                 name: "Technology Rental",
                 url: "https://technologyrental.com/",
-                image: "/assets/images/technologyrental.com.pdf",
+                image: "/assets/images/technologyrental.com.png",
                 description:
                     "Technology rental and event equipment solutions.",
             },
@@ -81,7 +82,7 @@ export const websiteGroups = [
             {
                 name: "Technology Rental UK",
                 url: "https://technologyrental.co.uk/",
-                image: "/assets/images/technologyrentalcouk.pdf",
+                image: "/assets/images/technologyrentalcouk.png",
                 description:
                     "Technology rental services for events across the UK.",
             },
@@ -89,7 +90,7 @@ export const websiteGroups = [
             {
                 name: "Technology Rental Singapore",
                 url: "https://technologyrental.sg/",
-                image: "/assets/images/technologyrental-sg.pdf",
+                image: "/assets/images/technologyrental-sg.png",
                 description:
                     "Event technology and equipment rental in Singapore.",
             },
@@ -97,7 +98,7 @@ export const websiteGroups = [
             {
                 name: "Hire Tablets Canada",
                 url: "https://www.hiretablets.ca/",
-                image: "/assets/images/hiretabletsca.pdf",
+                image: "/assets/images/hiretabletsca.png",
                 description:
                     "Tablet and IT equipment rental for Canadian events.",
             },
@@ -105,7 +106,7 @@ export const websiteGroups = [
             {
                 name: "Scottish Hire",
                 url: "https://scottishhire.co.uk/",
-                image: "/assets/images/scottishhirecouk.pdf",
+                image: "/assets/images/scottishhirecouk.png",
                 description:
                     "Technology rental and event solutions across Scotland.",
             },
@@ -113,7 +114,7 @@ export const websiteGroups = [
             {
                 name: "OWR Event WiFi Canada",
                 url: "https://owreventwifi.ca/",
-                image: "/assets/images/owreventwifica.pdf",
+                image: "/assets/images/owreventwifica.png",
                 description:
                     "Event WiFi and connectivity solutions in Canada.",
             },
@@ -121,7 +122,7 @@ export const websiteGroups = [
             {
                 name: "OWR Event WiFi UK",
                 url: "https://owreventwifi.co.uk/",
-                image: "/assets/images/owreventwificouk.pdf",
+                image: "/assets/images/owreventwificouk.png",
                 description:
                     "Event WiFi solutions for businesses and events.",
             },
@@ -129,7 +130,7 @@ export const websiteGroups = [
             {
                 name: "Event WiFi Canada",
                 url: "https://event-wifi.ca/",
-                image: "/assets/images/eventwifica.pdf",
+                image: "/assets/images/eventwifica.png",
                 description:
                     "Reliable WiFi and IT rental solutions for events.",
             },
@@ -137,7 +138,7 @@ export const websiteGroups = [
             {
                 name: "iPad Hire UK",
                 url: "https://ipadhire.co.uk/",
-                image: "/assets/images/ipadhirecouk.pdf",
+                image: "/assets/images/ipadhirecouk.png",
                 description:
                     "Professional iPad and event technology rental.",
             },
@@ -145,7 +146,7 @@ export const websiteGroups = [
             {
                 name: "OWR Event WiFi Australia",
                 url: "https://owreventwifi.com.au/",
-                image: "/assets/images/owreventwifiau.pdf",
+                image: "/assets/images/owreventwifiau.png",
                 description:
                     "Event WiFi and technology solutions across Australia.",
             },
@@ -153,7 +154,7 @@ export const websiteGroups = [
             {
                 name: "OneWorld Staff",
                 url: "https://oneworldstaff.com/",
-                image: "/assets/images/oneworldstaff.pdf",
+                image: "/assets/images/oneworldstaff.png",
                 description:
                     "Event staffing and professional support solutions.",
             },
@@ -168,7 +169,7 @@ export const websiteGroups = [
             {
                 name: "Blinkeyit — MERN E-Commerce App",
                 url: "https://blinkeyit-3wtn.vercel.app/",
-                image: "/assets/images/blinkeyit-3wtn.pdf",
+                image: "/assets/images/blinkeyit-3wtn.png",
                 description:
                     "Full-stack MERN e-commerce application with authentication, product management, categories, filtering, cart, orders, Stripe checkout and admin workflows.",
             },
@@ -183,7 +184,7 @@ export const websiteGroups = [
             {
                 name: "Technology Rental Australia",
                 url: "https://technologyrental.com.au/",
-                image: "/assets/images/technologyrentalau.pdf",
+                image: "/assets/images/technologyrentalau.png",
                 description:
                     "Technology rental and event solutions across Australia.",
             },
@@ -191,7 +192,7 @@ export const websiteGroups = [
             {
                 name: "OneWorldRental UAE",
                 url: "https://oneworldrentalae.ae/",
-                image: "/assets/images/oneworldrental.ae.pdf",
+                image: "/assets/images/oneworldrentalae.png",
                 description:
                     "Technology rental solutions for the UAE market.",
             },
@@ -199,7 +200,7 @@ export const websiteGroups = [
             {
                 name: "Hire Laptops Australia",
                 url: "https://www.hirelaptops.com.au/",
-                image: "/assets/images/hirelaptopsau.pdf",
+                image: "/assets/images/hirelaptopsau.png",
                 description:
                     "Laptop and IT equipment rental for Australian events.",
             },
@@ -207,10 +208,11 @@ export const websiteGroups = [
             {
                 name: "Laptop Rental Canada",
                 url: "https://laptoprental.ca/",
-                image: "/assets/images/laptoprentalca.pdf",
+                image: "/assets/images/laptoprentalca.png",
                 description:
                     "Laptop rental and technology solutions in Canada.",
             },
         ],
     },
 ];
+

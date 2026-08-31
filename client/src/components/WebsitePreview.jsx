@@ -1,3 +1,4 @@
+
 import {
     useEffect,
     useRef,
@@ -15,9 +16,10 @@ function WebsitePreview({ site }) {
     const [imageError, setImageError] =
         useState(false);
 
-    const isPDF =
-        /\.pdf($|[?#])/i.test(site.image);
 
+    /* =====================================================
+       LAZY LOAD PREVIEW
+    ===================================================== */
 
     useEffect(() => {
 
@@ -75,6 +77,17 @@ function WebsitePreview({ site }) {
     }, []);
 
 
+    /* =====================================================
+       RESET IMAGE ERROR WHEN SITE CHANGES
+    ===================================================== */
+
+    useEffect(() => {
+
+        setImageError(false);
+
+    }, [site.image]);
+
+
     return (
 
         <div
@@ -84,10 +97,14 @@ function WebsitePreview({ site }) {
 
             {!shouldLoad ? (
 
+                /* =========================================
+                   LAZY LOAD PLACEHOLDER
+                ========================================= */
+
                 <div className="website-preview-placeholder">
 
                     <div className="preview-placeholder-icon">
-                        {isPDF ? "PDF" : "IMG"}
+                        IMG
                     </div>
 
                     <span>
@@ -96,66 +113,79 @@ function WebsitePreview({ site }) {
 
                 </div>
 
-            ) : isPDF ? (
+            ) : !imageError ? (
 
-                <>
+                /* =========================================
+                   PNG IMAGE SCROLL CONTAINER
+                ========================================= */
 
-                    <iframe
-                        src={`${site.image}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
-                        title={`${site.name} website preview`}
-                        className="website-pdf-preview"
+                <div className="website-image-scroll">
+
+                    <img
+                        src={site.image}
+                        alt={`${site.name} website preview`}
+                        className="website-image-preview"
                         loading="lazy"
-                        scrolling="yes"
+                        decoding="async"
+                        draggable="false"
+                        onError={() =>
+                            setImageError(true)
+                        }
                     />
 
-                    <div className="website-preview-fade"></div>
-
-                    <div className="website-scroll-label">
-
-                        <span>
-                            ↕
-                        </span>
-
-                        Scroll to explore
-
-                    </div>
-
-                </>
+                </div>
 
             ) : (
 
-                <>
+                /* =========================================
+                   IMAGE ERROR
+                ========================================= */
 
-                    {!imageError ? (
+                <div className="website-preview-placeholder">
 
-                        <img
-                            src={site.image}
-                            alt={`${site.name} website preview`}
-                            className="website-image-preview"
-                            loading="lazy"
-                            decoding="async"
-                            onError={() =>
-                                setImageError(true)
-                            }
-                        />
+                    <div className="preview-placeholder-icon">
+                        IMG
+                    </div>
 
-                    ) : (
+                    <span>
+                        Preview unavailable
+                    </span>
 
-                        <div className="website-preview-placeholder">
+                </div>
 
-                            <div className="preview-placeholder-icon">
-                                IMG
-                            </div>
+            )}
 
-                            <span>
-                                Preview unavailable
-                            </span>
 
-                        </div>
+            {/* =============================================
+                BOTTOM FADE
+            ============================================= */}
 
-                    )}
+            {shouldLoad && !imageError && (
 
-                </>
+                <div
+                    className="website-preview-fade"
+                />
+
+            )}
+
+
+            {/* =============================================
+                SCROLL LABEL
+            ============================================= */}
+
+            {shouldLoad && !imageError && (
+
+                <div
+                    className="website-scroll-label"
+                >
+
+                    <span>
+                        ↕
+                    </span>
+
+                    Scroll to explore
+
+                </div>
 
             )}
 
@@ -166,3 +196,4 @@ function WebsitePreview({ site }) {
 
 
 export default WebsitePreview;
+

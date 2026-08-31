@@ -1,3 +1,4 @@
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -13,7 +14,7 @@ const app = express();
 ========================================================= */
 
 const resend = new Resend(
-    process.env.RESEND_API_KEY
+  process.env.RESEND_API_KEY
 );
 
 
@@ -22,14 +23,14 @@ const resend = new Resend(
 ========================================================= */
 
 app.use(
-    cors({
-        origin: "*",
-        methods: ["GET", "POST", "OPTIONS"],
-        allowedHeaders: [
-            "Content-Type",
-            "Authorization",
-        ],
-    })
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+    ],
+  })
 );
 
 app.use(express.json());
@@ -41,20 +42,20 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
 
-    res.status(200).json({
-        success: true,
-        message: "Ashfaq Portfolio API is running.",
-    });
+  res.status(200).json({
+    success: true,
+    message: "Ashfaq Portfolio API is running.",
+  });
 
 });
 
 
 app.get("/api/health", (req, res) => {
 
-    res.status(200).json({
-        success: true,
-        message: "Ashfaq Portfolio API is running.",
-    });
+  res.status(200).json({
+    success: true,
+    message: "Ashfaq Portfolio API is running.",
+  });
 
 });
 
@@ -65,86 +66,85 @@ app.get("/api/health", (req, res) => {
 
 app.post("/api/contact", async (req, res) => {
 
-    try {
+  try {
 
-        const {
-            name,
-            email,
-            subject,
-            message,
-        } = req.body;
-
-
-        /* =====================================================
-           VALIDATION
-        ===================================================== */
-
-        if (
-            !name ||
-            !email ||
-            !message
-        ) {
-
-            return res.status(400).json({
-
-                success: false,
-
-                message:
-                    "Name, email and message are required.",
-
-            });
-
-        }
+    const {
+      name,
+      email,
+      subject,
+      message,
+    } = req.body;
 
 
-        /* =====================================================
-           SEND EMAIL WITH RESEND
-        ===================================================== */
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
 
-        const {
-            data,
-            error,
-        } = await resend.emails.send({
+    if (
+      !name ||
+      !email ||
+      !message
+    ) {
 
-            from:
-                "Portfolio Contact <onboarding@resend.dev>",
+      return res.status(400).json({
 
-            to: [
-                process.env.CONTACT_EMAIL,
-            ],
+        success: false,
 
-            replyTo: email,
+        message:
+          "Name, email and message are required.",
 
-            subject:
-                subject ||
-                `New Portfolio Message from ${name}`,
+      });
 
-            html: `
+    }
 
-        <!DOCTYPE html>
 
-        <html>
+    /* =====================================================
+       SEND EMAIL WITH RESEND
+    ===================================================== */
 
-        <head>
+    const {
+      data,
+      error,
+    } = await resend.emails.send({
 
-          <meta charset="UTF-8">
+      from:
+        "Portfolio Contact <onboarding@resend.dev>",
+
+      to: [
+        process.env.CONTACT_EMAIL,
+      ],
+
+      replyTo: email,
+
+      subject:
+        subject ||
+        `New Portfolio Message from ${name} `,
+
+      html: `
+
+  < !DOCTYPE html >
+
+    <html>
+
+      <head>
+
+        <meta charset="UTF-8">
 
           <title>
             Portfolio Contact
           </title>
 
-        </head>
+      </head>
 
 
-        <body style="
+      <body style="
           margin: 0;
           padding: 0;
           background: #f5f5f5;
           font-family: Arial, sans-serif;
         ">
 
-
-          <div style="
+        <div style="
             max-width: 650px;
             margin: 40px auto;
             background: #ffffff;
@@ -156,125 +156,123 @@ app.post("/api/contact", async (req, res) => {
           ">
 
 
-            <!-- HEADER -->
+          <!-- HEADER -->
 
-            <div style="
+          <div style="
               padding: 25px;
               background: #111827;
               color: white;
             ">
 
-              <h2 style="
+            <h2 style="
                 margin: 0;
               ">
 
-                Ashfaq Portfolio
-                Website Contact Form
+              Ashfaq Portfolio
+              Website Contact Form
 
-              </h2>
+            </h2>
 
 
-              <p style="
+            <p style="
                 margin: 8px 0 0;
                 color: #d1d5db;
               ">
 
-                Someone submitted
-                your portfolio contact form.
+              Someone submitted
+              your portfolio contact form.
+
+            </p>
+
+          </div>
+
+
+          <!-- CONTENT -->
+
+          <div style="
+              padding: 30px;
+            ">
+
+
+            <!-- NAME -->
+
+            <div style="
+                margin-bottom: 20px;
+              ">
+
+              <strong>
+                Name
+              </strong>
+
+
+              <p style="
+                  margin: 6px 0 0;
+                  color: #374151;
+                ">
+
+                ${name}
 
               </p>
 
             </div>
 
 
-            <!-- CONTENT -->
+            <!-- EMAIL -->
 
             <div style="
-              padding: 30px;
-            ">
-
-
-              <!-- NAME -->
-
-              <div style="
                 margin-bottom: 20px;
               ">
 
-                <strong>
-                  Name
-                </strong>
+              <strong>
+                Email
+              </strong>
 
 
-                <p style="
+              <p style="
                   margin: 6px 0 0;
                   color: #374151;
                 ">
 
-                  ${name}
+                ${email}
 
-                </p>
+              </p>
 
-              </div>
+            </div>
 
 
-              <!-- EMAIL -->
+            <!-- SUBJECT -->
 
-              <div style="
+            <div style="
                 margin-bottom: 20px;
               ">
 
-                <strong>
-                  Email
-                </strong>
+              <strong>
+                Subject
+              </strong>
 
 
-                <p style="
+              <p style="
                   margin: 6px 0 0;
                   color: #374151;
                 ">
 
-                  ${email}
+                ${subject || "No subject"}
 
-                </p>
+              </p>
 
-              </div>
+            </div>
 
 
-              <!-- SUBJECT -->
+            <!-- MESSAGE -->
+
+            <div>
+
+              <strong>
+                Message
+              </strong>
+
 
               <div style="
-                margin-bottom: 20px;
-              ">
-
-                <strong>
-                  Subject
-                </strong>
-
-
-                <p style="
-                  margin: 6px 0 0;
-                  color: #374151;
-                ">
-
-                  ${subject ||
-                "No subject"
-                }
-
-                </p>
-
-              </div>
-
-
-              <!-- MESSAGE -->
-
-              <div>
-
-                <strong>
-                  Message
-                </strong>
-
-
-                <div style="
                   margin-top: 10px;
                   padding: 15px;
                   background: #f9fafb;
@@ -284,108 +282,127 @@ app.post("/api/contact", async (req, res) => {
                   white-space: pre-wrap;
                 ">
 
-                  ${message}
-
-                </div>
+                ${message}
 
               </div>
-
-
-            </div>
-
-
-            <!-- FOOTER -->
-
-            <div style="
-              padding: 20px 30px;
-              background: #f9fafb;
-              color: #6b7280;
-              font-size: 13px;
-            ">
-
-              This message was sent
-              from your portfolio website.
 
             </div>
 
 
           </div>
 
-        </body>
 
-        </html>
+          <!-- FOOTER -->
 
-      `,
-        });
+          <div style="
+              padding: 20px 30px;
+              background: #f9fafb;
+              color: #6b7280;
+              font-size: 13px;
+            ">
 
+            This message was sent
+            from your portfolio website.
 
-        /* =====================================================
-           RESEND ERROR
-        ===================================================== */
-
-        if (error) {
-
-            console.error(
-                "Resend error:",
-                error
-            );
+          </div>
 
 
-            return res.status(500).json({
+        </div>
 
-                success: false,
+      </body>
 
-                message:
-                    "Failed to send message.",
+    </html>
 
-                error:
-                    error.message,
-
-            });
-
-        }
+`,
+    });
 
 
-        /* =====================================================
-           SUCCESS
-        ===================================================== */
+    /* =====================================================
+       RESEND ERROR
+    ===================================================== */
 
-        console.log(
-            "Portfolio contact email sent:",
-            data
-        );
+    if (error) {
 
-
-        return res.status(200).json({
-
-            success: true,
-
-            message:
-                "Message sent successfully.",
-
-        });
+      console.error(
+        "Resend error:",
+        error
+      );
 
 
-    } catch (error) {
+      return res.status(500).json({
 
-        console.error(
-            "Contact API error:",
-            error
-        );
+        success: false,
 
+        message:
+          "Failed to send message.",
 
-        return res.status(500).json({
+        error:
+          error.message,
 
-            success: false,
-
-            message:
-                "Something went wrong while sending the message.",
-
-        });
+      });
 
     }
 
+
+    /* =====================================================
+       SUCCESS
+    ===================================================== */
+
+    console.log(
+      "Portfolio contact email sent:",
+      data
+    );
+
+
+    return res.status(200).json({
+
+      success: true,
+
+      message:
+        "Message sent successfully.",
+
+    });
+
+
+  } catch (error) {
+
+    console.error(
+      "Contact API error:",
+      error
+    );
+
+
+    return res.status(500).json({
+
+      success: false,
+
+      message:
+        "Something went wrong while sending the message.",
+
+    });
+
+  }
+
 });
+
+
+/* =========================================================
+   START SERVER LOCALLY
+========================================================= */
+
+const PORT = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV !== "production") {
+
+  app.listen(PORT, () => {
+
+    console.log(
+      `Server running on http://localhost:${PORT}`
+    );
+
+  });
+
+}
 
 
 /* =========================================================
@@ -393,3 +410,4 @@ app.post("/api/contact", async (req, res) => {
 ========================================================= */
 
 export default app;
+

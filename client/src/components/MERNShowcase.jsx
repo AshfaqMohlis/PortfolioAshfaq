@@ -1,14 +1,15 @@
+
 function MERNShowcase() {
-
     return (
-
         <section className="mern-showcase">
 
             <div className="container">
 
                 <div className="mern-showcase-grid">
 
-                    {/* LEFT CONTENT */}
+                    {/* =====================================================
+                        LEFT CONTENT
+                    ===================================================== */}
 
                     <div className="mern-showcase-content">
 
@@ -16,33 +17,22 @@ function MERNShowcase() {
                             01
                         </span>
 
-
                         <p className="eyebrow">
                             MERN STACK PROJECT
                         </p>
 
-
-                        <h2>
+                        <h2 className="h2title">
                             Blinkeyit
-                            <span>
-                                {" "}
-                                E-Commerce App
-                            </span>
+                            <span>{" "}E-Commerce App</span>
                         </h2>
 
-
                         <p className="mern-showcase-description">
-
-                            A full-stack MERN e-commerce
-                            application built with React,
-                            Node.js, Express and MongoDB.
-                            The application includes
-                            authentication, product management,
-                            shopping cart, orders, payments
-                            and a responsive modern interface.
-
+                            A full-stack MERN e-commerce application built
+                            with React, Node.js, Express and MongoDB.
+                            The application includes authentication,
+                            product management, shopping cart, orders,
+                            payments and a responsive modern interface.
                         </p>
-
 
                         <div className="mern-showcase-tech">
 
@@ -57,7 +47,6 @@ function MERNShowcase() {
 
                         </div>
 
-
                         <div className="mern-showcase-actions">
 
                             <a
@@ -66,15 +55,12 @@ function MERNShowcase() {
                                 rel="noopener noreferrer"
                                 className="btn primary"
                             >
-
                                 View Live Project
 
                                 <span className="mern-btn-arrow">
                                     ↗
                                 </span>
-
                             </a>
-
 
                             <span className="mern-showcase-label">
                                 FULL STACK • MERN
@@ -85,12 +71,13 @@ function MERNShowcase() {
                     </div>
 
 
-                    {/* RIGHT CARD */}
+                    {/* =====================================================
+                        RIGHT CARD
+                    ===================================================== */}
 
                     <div className="mern-showcase-card-wrapper">
 
                         <div className="mern-showcase-glow"></div>
-
 
                         <div className="mern-showcase-card">
 
@@ -99,18 +86,14 @@ function MERNShowcase() {
                             <div className="mern-card-top">
 
                                 <div className="mern-card-dots">
-
                                     <span></span>
                                     <span></span>
                                     <span></span>
-
                                 </div>
-
 
                                 <span className="mern-card-url">
                                     blinkeyit-3wtn.vercel.app
                                 </span>
-
 
                                 <span className="mern-card-status">
                                     LIVE
@@ -119,19 +102,26 @@ function MERNShowcase() {
                             </div>
 
 
-                            {/* PDF PREVIEW */}
+                            {/* =================================================
+                                IMAGE PREVIEW
+                            ================================================= */}
 
                             <div className="mern-project-preview">
 
-                                <iframe
-                                    src="/assets/images/blinkeyit-3wtn.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-                                    title="Blinkeyit MERN E-Commerce Project Preview"
-                                    className="mern-project-pdf"
-                                    loading="lazy"
-                                />
+                                <div className="mern-project-scroll">
+
+                                    <img
+                                        src="/assets/images/blinkeyit-3wtn.png"
+                                        alt="Blinkeyit MERN E-Commerce Project Preview"
+                                        className="mern-project-image"
+                                    />
+
+                                </div>
 
 
-                                <div className="mern-project-overlay">
+                                {/* Overlay */}
+
+                                {/* <div className="mern-project-overlay">
 
                                     <span>
                                         MERN E-COMMERCE
@@ -141,12 +131,25 @@ function MERNShowcase() {
                                         Blinkeyit
                                     </strong>
 
+                                </div> */}
+
+
+                                {/* Scroll Indicator */}
+
+                                <div className="mern-scroll-label">
+
+                                    <span>↕</span>
+
+                                    Scroll to explore
+
                                 </div>
 
                             </div>
 
 
-                            {/* FOOTER */}
+                            {/* =================================================
+                                FOOTER
+                            ================================================= */}
 
                             <div className="mern-card-footer">
 
@@ -161,7 +164,6 @@ function MERNShowcase() {
                                     </strong>
 
                                 </div>
-
 
                                 <a
                                     href="https://blinkeyit-3wtn.vercel.app/"
@@ -183,9 +185,8 @@ function MERNShowcase() {
             </div>
 
         </section>
-
     );
 }
 
-
 export default MERNShowcase;
+

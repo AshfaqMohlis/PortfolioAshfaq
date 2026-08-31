@@ -181,7 +181,7 @@ img {
 .logo {
     position: relative;
 
-    max-width: 250px;
+    max-width: 200px;
 
     font:
         800 28px "Inter Tight",
@@ -645,7 +645,6 @@ html.js-reveal-enabled .section {
 
     transition:
         opacity var(--reveal-duration) var(--reveal-easing),
-
         transform var(--reveal-duration) var(--reveal-easing);
 }
 
@@ -1302,7 +1301,7 @@ footer {
     min-width: 0;
     min-height: 0;
 
-    padding: 0 !important;
+    padding: 0;
 
     overflow: hidden;
 
@@ -1334,7 +1333,7 @@ footer {
 
 
 /* =========================================================
-   WEBSITE CARD PREVIEW
+   WEBSITE PNG PREVIEW
 ========================================================= */
 
 .website-project-preview {
@@ -1352,23 +1351,20 @@ footer {
 
     overflow: hidden;
 
-    background:
-        linear-gradient(135deg,
-            var(--surface),
-            rgba(0, 102, 217, 0.04));
+    background: var(--surface);
 
-    border: 0 !important;
+    border: 0;
 
-    outline: 0 !important;
+    outline: 0;
 
-    box-shadow: none !important;
+    box-shadow: none;
 
     isolation: isolate;
 }
 
 
 /* =========================================================
-   WEBSITE IMAGE
+   WEBSITE PNG IMAGE
 ========================================================= */
 
 .website-image-preview {
@@ -1379,17 +1375,17 @@ footer {
 
     max-width: none;
 
-    object-fit: scale-down;
+    object-fit: cover;
 
-    object-position: center;
+    object-position: center top;
 
-    background: transparent;
+    background: var(--surface);
 
-    border: 0 !important;
+    border: 0;
 
-    outline: none !important;
+    outline: none;
 
-    box-shadow: none !important;
+    box-shadow: none;
 
     transition:
         transform 0.6s var(--reveal-easing),
@@ -1405,74 +1401,11 @@ footer {
 
 
 /* =========================================================
-   WEBSITE PDF
-========================================================= */
-
-.website-pdf-container {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-
-    background: #0b1019;
-
-    border: 0;
-
-    outline: none;
-}
-
-.pdf-preview-wrapper {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-
-    border: 0;
-
-    outline: none;
-}
-
-.website-pdf-preview {
-    position: absolute;
-
-    inset: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    border: 0 !important;
-
-    outline: none !important;
-
-    background: #0b1019;
-
-    overflow: hidden;
-
-    scrollbar-width: none;
-}
-
-.website-pdf-preview::-webkit-scrollbar {
-    display: none;
-
-    width: 0;
-    height: 0;
-}
-
-
-/* =========================================================
    REMOVE IMAGE EDGES
 ========================================================= */
 
 .website-project-preview::before,
-.website-project-preview::after,
-.website-image-preview::before,
-.website-image-preview::after {
+.website-project-preview::after {
     display: none !important;
 
     content: none !important;
@@ -1915,6 +1848,11 @@ footer {
     overflow: hidden;
 }
 
+
+/* =========================================================
+   CAROUSEL HEADER
+========================================================= */
+
 .aa-website-carousel-header {
     width: 100%;
 
@@ -1965,7 +1903,7 @@ footer {
     padding-top: 15px;
     padding-bottom: 20px;
 
-    overflow: hidden !important;
+    overflow: hidden;
 
     scrollbar-width: none;
 
@@ -2053,7 +1991,7 @@ footer {
 
 
 /* =========================================================
-   CAROUSEL CARD IMAGE
+   CAROUSEL PNG IMAGE
 ========================================================= */
 
 .aa-website-carousel-card .website-project-preview {
@@ -2066,24 +2004,34 @@ footer {
 
     min-height: 205px;
 
-    overflow: hidden !important;
+    overflow: hidden;
 
     background: var(--surface);
 
-    border: 0 !important;
+    border: 0;
 
-    outline: none !important;
+    outline: none;
 
-    box-shadow: none !important;
+    box-shadow: none;
 }
 
 .aa-website-carousel-card .website-image-preview {
+    display: block;
+
     width: 100%;
     height: 100%;
 
-    object-fit: scale-down;
+    object-fit: cover;
 
-    object-position: center;
+    object-position: center top;
+
+    background: var(--surface);
+
+    border: 0;
+
+    outline: none;
+
+    box-shadow: none;
 }
 
 
@@ -2250,192 +2198,109 @@ footer {
 
 /* =========================================================
    MERN PROJECT SHOWCASE
+   MATCHED TO WEBSITE CAROUSEL CARD
 ========================================================= */
 
 .mern-showcase {
     position: relative;
-
     width: 100%;
-
     padding: 50px 0;
-
     margin-bottom: var(--section-gap);
-
     overflow: hidden;
-
     background:
         radial-gradient(circle at 88% 50%,
-            rgba(0, 102, 217, 0.12),
+            rgba(0, 102, 217, 0.08),
             transparent 30%),
         radial-gradient(circle at 70% 70%,
-            rgba(255, 106, 0, 0.07),
+            rgba(255, 106, 0, 0.045),
             transparent 28%);
-
-    border-block:
-        1px solid var(--border);
+    border-block: 1px solid var(--border);
 }
-
-
-/* =========================================================
-   MERN GRID
-========================================================= */
 
 .mern-showcase-grid {
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr) minmax(0, 0.72fr);
-
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
     align-items: center;
-
-    gap: 70px;
-
+    gap: 60px;
     width: 100%;
 }
 
-
-/* =========================================================
-   MERN CONTENT
-========================================================= */
-
 .mern-showcase-content {
     position: relative;
-
     width: 100%;
-
     max-width: 570px;
-
     padding-left: 5px;
-
     opacity: 0;
-
-    transform:
-        translateY(70px) scale(0.96);
-
+    transform: translateY(70px) scale(0.96);
     transform-origin: center bottom;
-
     animation:
         mernContentReveal 0.9s cubic-bezier(.22, 1, .36, 1) 0.15s forwards;
 }
 
 .mern-showcase-number {
     position: absolute;
-
-    top: -65px;
-    left: -8px;
-
-    color:
-        rgba(0, 102, 217, 0.08);
-
-    font:
-        800 100px / 1 "Inter Tight",
-        sans-serif;
-
-    letter-spacing: -7px;
-
+    top: -52px;
+    left: -5px;
+    color: rgba(0, 102, 217, 0.07);
+    font: 800 82px / 1 "Inter Tight", sans-serif;
+    letter-spacing: -5px;
     pointer-events: none;
-
     user-select: none;
-
     z-index: 0;
 }
 
 .mern-showcase-content .eyebrow {
     position: relative;
-
     z-index: 2;
-
-    margin-bottom: 18px;
-
+    margin-bottom: 16px;
     color: var(--accent-orange);
 }
 
 .mern-showcase-content h2 {
     position: relative;
-
     z-index: 2;
-
     max-width: 570px;
-
-    margin-bottom: 24px;
-
-    font:
-        800 clamp(40px, 4.5vw, 64px) / 0.98 "Inter Tight",
-        sans-serif;
-
+    margin: 0 0 24px;
+    font: 800 clamp(40px, 4.5vw, 62px) / 0.98 "Inter Tight", sans-serif;
     letter-spacing: -3px;
 }
 
 .mern-showcase-content h2 span {
-    background:
-        linear-gradient(90deg,
-            var(--accent-blue),
-            var(--accent-orange));
-
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
 .mern-showcase-description {
     position: relative;
-
     z-index: 2;
-
     max-width: 535px;
-
-    margin-bottom: 28px;
-
+    margin: 0 0 28px;
     color: var(--muted);
-
-    font:
-        16px / 1.8 "Inter Tight",
-        sans-serif;
+    font: 16px / 1.75 "Inter Tight", sans-serif;
 }
-
-
-/* =========================================================
-   MERN TECHNOLOGY
-========================================================= */
 
 .mern-showcase-tech {
     position: relative;
-
     z-index: 2;
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
-
     max-width: 550px;
-
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 .mern-showcase-tech span {
+    display: inline-flex;
+    align-items: center;
     padding: 7px 11px;
-
-    border:
-        1px solid var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 50px;
-
-    background:
-        color-mix(in srgb,
-            var(--card) 88%,
-            transparent);
-
+    background: color-mix(in srgb, var(--card) 88%, transparent);
     color: var(--dim);
-
-    font:
-        600 10px / 1 "Inter Tight",
-        sans-serif;
-
+    font: 600 10px / 1 "Inter Tight", sans-serif;
     letter-spacing: 0.5px;
-
     transition:
         color 0.25s ease,
         border-color 0.25s ease,
@@ -2445,34 +2310,19 @@ footer {
 
 .mern-showcase-tech span:hover {
     color: #fff;
-
     border-color: var(--accent-orange);
-
-    background:
-        linear-gradient(100deg,
+    background: linear-gradient(100deg,
             rgba(0, 102, 217, 0.15),
             rgba(255, 106, 0, 0.15));
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
-
-
-/* =========================================================
-   MERN ACTIONS
-========================================================= */
 
 .mern-showcase-actions {
     position: relative;
-
     z-index: 2;
-
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 18px;
 }
 
@@ -2482,176 +2332,100 @@ footer {
 
 .mern-btn-arrow {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     font-size: 16px;
-
-    transition:
-        transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    transition: transform 0.3s var(--reveal-easing);
 }
 
 .mern-showcase-actions .btn:hover .mern-btn-arrow {
-    transform:
-        translate(3px, -3px);
+    transform: translate(3px, -3px);
 }
 
 .mern-showcase-label {
     color: var(--dim);
-
-    font:
-        700 10px / 1 "Inter Tight",
-        sans-serif;
-
+    font: 700 10px / 1 "Inter Tight", sans-serif;
     letter-spacing: 1.5px;
 }
 
-
-/* =========================================================
-   MERN CARD WRAPPER
-========================================================= */
-
 .mern-showcase-card-wrapper {
     position: relative;
-
     width: 100%;
-
-    max-width: 520px;
-
+    max-width: 100%;
+    min-width: 0;
     margin-left: auto;
-
-    perspective: 1400px;
-
+    perspective: none;
     opacity: 0;
-
-    transform:
-        translateY(80px) scale(0.94);
-
+    transform: translateY(80px) scale(0.94);
     transform-origin: center bottom;
-
     animation:
         mernCardReveal 1s cubic-bezier(.22, 1, .36, 1) 0.25s forwards;
 }
 
 .mern-showcase-glow {
     position: absolute;
-
     top: 12%;
     right: 5%;
-
-    width: 75%;
-    height: 75%;
-
+    width: 65%;
+    height: 65%;
     border-radius: 50%;
-
-    background:
-        linear-gradient(135deg,
-            var(--accent-blue),
-            var(--accent-orange));
-
-    opacity: 0.12;
-
-    filter: blur(90px);
-
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-orange));
+    opacity: 0.08;
+    filter: blur(70px);
     pointer-events: none;
-
     z-index: 0;
 }
 
-
-/* =========================================================
-   MERN MAIN CARD
-========================================================= */
-
 .mern-showcase-card {
     position: relative;
-
     z-index: 2;
-
     display: flex;
-
     flex-direction: column;
-
     width: 100%;
-
+    min-width: 0;
+    max-width: 100%;
     overflow: hidden;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 18px;
-
+    border: 1px solid var(--border);
+    border-radius: 12px;
     background: var(--card);
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.28);
-
-    transform:
-        translateZ(0);
-
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    transform: translateZ(0);
     transition:
-        transform 0.6s cubic-bezier(.22, 1, .36, 1),
+        transform 0.45s var(--reveal-easing),
         border-color 0.35s ease,
-        box-shadow 0.6s ease;
+        box-shadow 0.45s ease;
 }
 
 .mern-showcase-card:hover {
-    transform:
-        translateY(-10px) rotateX(1deg) rotateY(-1deg);
-
-    border-color:
-        color-mix(in srgb,
-            var(--accent-blue) 60%,
-            var(--border));
-
-    box-shadow:
-        0 45px 100px rgba(0, 74, 150, 0.25);
+    transform: translateY(-7px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 16px 36px rgba(0, 102, 217, 0.18);
 }
 
-
-/* =========================================================
-   MERN TOP BAR
-========================================================= */
-
 .mern-card-top {
-    height: 48px;
-
     display: flex;
-
     align-items: center;
-
-    gap: 14px;
-
-    flex-shrink: 0;
-
-    padding: 0 16px;
-
-    background:
-        color-mix(in srgb,
-            var(--surface) 94%,
-            transparent);
-
-    border-bottom:
-        1px solid var(--border);
+    gap: 12px;
+    flex: 0 0 42px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0 13px;
+    box-sizing: border-box;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
 }
 
 .mern-card-dots {
     display: flex;
-
     align-items: center;
-
-    gap: 6px;
-
+    gap: 5px;
     flex-shrink: 0;
 }
 
 .mern-card-dots span {
-    width: 8px;
-    height: 8px;
-
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-
     background: var(--border);
 }
 
@@ -2669,41 +2443,23 @@ footer {
 
 .mern-card-url {
     flex: 1;
-
     min-width: 0;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
-
     white-space: nowrap;
-
     color: var(--dim);
-
-    font:
-        600 9px / 1 "Inter Tight",
-        sans-serif;
-
-    letter-spacing: 0.7px;
+    font: 600 9px / 1 "Inter Tight", sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .mern-card-status {
     flex-shrink: 0;
-
-    padding: 5px 8px;
-
-    border:
-        1px solid rgba(0, 136, 255, 0.4);
-
+    padding: 4px 7px;
+    border: 1px solid rgba(0, 136, 255, 0.35);
     border-radius: 50px;
-
     color: var(--accent-blue);
-
-    font:
-        700 8px / 1 "Inter Tight",
-        sans-serif;
-
-    letter-spacing: 1px;
+    font: 700 7px / 1 "Inter Tight", sans-serif;
+    letter-spacing: 0.8px;
 }
 
 
@@ -2713,225 +2469,194 @@ footer {
 
 .mern-project-preview {
     position: relative;
-
     flex: 0 0 320px;
-
     width: 100%;
-
     height: 320px;
-
     min-height: 320px;
-
     overflow: hidden;
-
     padding: 0;
-
     margin: 0;
-
-    background: #fff;
-
+    background: var(--surface);
     border: 0;
+    outline: none;
+    isolation: isolate;
 }
 
+.mern-project-scroll {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-blue) rgba(255, 255, 255, 0.08);
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    z-index: 2;
+}
 
-/* =========================================================
-   MERN PROJECT IMAGE
-========================================================= */
+.mern-project-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.mern-project-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.mern-project-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--accent-blue);
+    box-shadow: 0 0 8px rgba(0, 136, 255, 0.35);
+}
+
+.mern-project-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+    box-shadow: 0 0 12px rgba(0, 136, 255, 0.45);
+}
 
 .mern-project-image {
     display: block;
-
     width: 100%;
-    height: 100%;
-
+    height: auto;
+    min-height: 100%;
+    max-width: none;
     object-fit: cover;
-
-    object-position: center top;
-
-    border: 0 !important;
-
-    outline: 0 !important;
-
+    object-position: top center;
     background: var(--surface);
-
-    transition:
-        transform 0.8s cubic-bezier(.22, 1, .36, 1),
-        filter 0.5s ease;
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    vertical-align: top;
+    transition: none;
 }
 
 .mern-showcase-card:hover .mern-project-image {
-    transform: scale(1.035);
-
-    filter:
-        brightness(0.96) saturate(1.04);
+    transform: none;
+    filter: none;
 }
-
-
-/* =========================================================
-   MERN PDF
-========================================================= */
-
-.mern-project-pdf {
-    position: absolute;
-
-    inset: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-
-    padding: 0;
-
-    border: 0;
-
-    outline: none;
-
-    background: #fff;
-}
-
-
-/* =========================================================
-   MERN OVERLAY
-========================================================= */
 
 .mern-project-overlay {
     position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+    left: 15px;
+    bottom: 15px;
     display: flex;
-
     flex-direction: column;
-
-    gap: 4px;
-
-    padding: 55px 22px 20px;
-
-    background:
-        linear-gradient(to top,
-            rgba(3, 8, 16, 0.82),
-            rgba(3, 8, 16, 0));
-
+    gap: 3px;
+    padding: 0;
+    background: transparent;
     color: #fff;
-
     pointer-events: none;
+    z-index: 5;
 }
 
 .mern-project-overlay span {
-    font:
-        700 9px / 1 "Inter Tight",
-        sans-serif;
-
-    letter-spacing: 1.5px;
-
     color: var(--accent-orange);
-
-    opacity: 0.85;
+    font: 600 8px / 1.2 "Inter Tight", sans-serif;
+    letter-spacing: 0.12em;
 }
 
 .mern-project-overlay strong {
-    font:
-        700 24px / 1.1 "Inter Tight",
-        sans-serif;
+    font: 600 17px / 1.2 "Inter Tight", sans-serif;
 }
 
+.mern-scroll-label {
+    position: absolute;
+    left: 50%;
+    bottom: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(3, 8, 16, 0.78);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font: 600 10px / 1 "Inter Tight", sans-serif;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-/* =========================================================
-   MERN FOOTER
-========================================================= */
+.mern-showcase-card:hover .mern-scroll-label {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.mern-scroll-label span {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    font-size: 13px;
+}
 
 .mern-card-footer {
-    min-height: 78px;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
-    gap: 20px;
-
-    flex-shrink: 0;
-
-    padding: 15px 20px;
-
+    gap: 12px;
+    min-height: 64px;
+    padding: 12px 15px;
+    box-sizing: border-box;
     background: var(--card);
-
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 }
 
 .mern-card-info {
     display: flex;
-
     flex-direction: column;
-
-    gap: 5px;
-
+    gap: 4px;
     min-width: 0;
 }
 
 .mern-card-info span {
-    color: var(--accent-blue);
-
-    font:
-        700 8px / 1 "Inter Tight",
-        sans-serif;
-
-    letter-spacing: 1.5px;
+    color: var(--dim);
+    font: 600 8px / 1 "Inter Tight", sans-serif;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
 }
 
 .mern-card-info strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: var(--text);
-
-    font:
-        600 16px / 1.2 "Inter Tight",
-        sans-serif;
+    font: 600 13px / 1.2 "Inter Tight", sans-serif;
 }
 
-.mern-card-footer a {
-    width: 40px;
-    height: 40px;
-
+.mern-card-footer > a {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
-    border:
-        1px solid var(--border);
-
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 102, 217, 0.25);
     border-radius: 50%;
-
     color: var(--accent-blue);
-
-    font-size: 18px;
-
+    font-size: 16px;
+    text-decoration: none;
     transition:
-        transform 0.35s cubic-bezier(.22, 1, .36, 1),
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.35s var(--reveal-easing),
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
 }
 
-.mern-card-footer a:hover {
-    transform:
-        translate(4px, -4px);
-
-    background:
-        linear-gradient(135deg,
-            var(--accent-blue),
-            var(--accent-orange));
-
-    border-color: transparent;
-
-    color: #fff;
+.mern-card-footer > a:hover {
+    transform: translate(3px, -3px);
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    background: rgba(255, 106, 0, 0.05);
 }
 
 
@@ -2942,32 +2667,24 @@ footer {
 @keyframes mernContentReveal {
     from {
         opacity: 0;
-
-        transform:
-            translateY(70px) scale(0.96);
+        transform: translateY(70px) scale(0.96);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
 }
 
 @keyframes mernCardReveal {
     from {
         opacity: 0;
-
-        transform:
-            translateY(80px) scale(0.94);
+        transform: translateY(80px) scale(0.94);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0) scale(1);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -2993,6 +2710,65 @@ footer {
     .two-col,
     .contact-grid {
         gap: 45px;
+    }
+
+
+    /* =====================================================
+       MERN SHOWCASE - TABLET
+    ===================================================== */
+
+    .mern-showcase {
+        padding: 55px 0;
+    }
+
+    .mern-showcase-grid {
+        grid-template-columns:
+            minmax(0, 1fr) minmax(0, 0.9fr);
+
+        gap: 35px;
+        align-items: center;
+    }
+
+    .mern-showcase-content {
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .mern-showcase-content h2 {
+        max-width: 100%;
+        font-size: clamp(38px, 5vw, 54px);
+        letter-spacing: -2.5px;
+    }
+
+    .mern-showcase-description {
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .mern-showcase-tech {
+        max-width: 100%;
+    }
+
+    .mern-showcase-card-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .mern-showcase-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mern-project-preview {
+        height: 280px;
+        min-height: 280px;
+        flex-basis: 280px;
+    }
+
+    .mern-card-footer {
+        min-height: 60px;
+        padding: 11px 14px;
     }
 
 
@@ -3024,34 +2800,50 @@ footer {
 
         flex-basis: 210px;
     }
+}
 
 
-    /* MERN */
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
 
-    .mern-showcase {
-        padding: 50px 0;
-    }
+@media (max-width: 850px) {
 
     .mern-showcase-grid {
-        grid-template-columns:
-            minmax(0, 0.95fr) minmax(0, 1.05fr);
-
+        grid-template-columns: 1fr;
         gap: 45px;
     }
 
-    .mern-showcase-content h2 {
-        font-size:
-            clamp(38px, 5vw, 54px);
+    .mern-showcase-content {
+        max-width: 680px;
+        margin: 0 auto;
+    }
 
-        letter-spacing: -2.5px;
+    .mern-showcase-content h2 {
+        max-width: 650px;
+    }
+
+    .mern-showcase-description {
+        max-width: 620px;
+    }
+
+    .mern-showcase-tech {
+        max-width: 650px;
+    }
+
+    .mern-showcase-card-wrapper {
+        width: min(100%, 680px);
+        margin: 0 auto;
+    }
+
+    .mern-showcase-card {
+        width: 100%;
     }
 
     .mern-project-preview {
-        height: 350px;
-
-        min-height: 350px;
-
-        flex-basis: 350px;
+        height: 330px;
+        min-height: 330px;
+        flex-basis: 330px;
     }
 }
 
@@ -3068,9 +2860,165 @@ footer {
 
     .section {
         padding: 50px 0;
+        margin-bottom: var(--section-gap);
+    }
 
-        margin-bottom:
-            var(--section-gap);
+
+    /* =====================================================
+       MERN SHOWCASE - MOBILE
+    ===================================================== */
+
+    .mern-showcase {
+        padding: 45px 0;
+        margin-bottom: var(--section-gap);
+    }
+
+    .mern-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        width: 100%;
+    }
+
+    .mern-showcase-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .mern-showcase-number {
+        top: -34px;
+        left: 0;
+        font-size: 60px;
+        letter-spacing: -4px;
+    }
+
+    .mern-showcase-content .eyebrow {
+        margin-bottom: 12px;
+    }
+
+    .mern-showcase-content h2 {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: clamp(34px, 10vw, 46px);
+        line-height: 1;
+        letter-spacing: -2px;
+    }
+
+    .mern-showcase-description {
+        max-width: 100%;
+        margin-bottom: 22px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .mern-showcase-tech {
+        width: 100%;
+        max-width: 100%;
+        gap: 7px;
+        margin-bottom: 24px;
+    }
+
+    .mern-showcase-tech span {
+        padding: 7px 10px;
+        font-size: 9px;
+    }
+
+    .mern-showcase-actions {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .mern-showcase-actions .btn {
+        max-width: 100%;
+    }
+
+    .mern-showcase-card-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .mern-showcase-card {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 11px;
+    }
+
+    .mern-card-top {
+        gap: 9px;
+        height: 40px;
+        min-height: 40px;
+        flex-basis: 40px;
+        padding: 0 11px;
+    }
+
+    .mern-card-dots {
+        gap: 4px;
+    }
+
+    .mern-card-dots span {
+        width: 6px;
+        height: 6px;
+    }
+
+    .mern-card-url {
+        font-size: 8px;
+    }
+
+    .mern-card-status {
+        padding: 4px 6px;
+        font-size: 6px;
+    }
+
+    .mern-project-preview {
+        width: 100%;
+        height: 250px;
+        min-height: 250px;
+        flex-basis: 250px;
+    }
+
+    .mern-project-overlay {
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .mern-project-overlay strong {
+        font-size: 15px;
+    }
+
+    .mern-scroll-label {
+        bottom: 10px;
+        padding: 5px 9px;
+        font-size: 9px;
+    }
+
+    .mern-scroll-label span {
+        width: 15px;
+        height: 15px;
+        font-size: 11px;
+    }
+
+    .mern-card-footer {
+        min-height: 58px;
+        padding: 10px 12px;
+    }
+
+    .mern-card-info {
+        gap: 3px;
+    }
+
+    .mern-card-info span {
+        font-size: 7px;
+    }
+
+    .mern-card-info strong {
+        font-size: 12px;
+    }
+
+    .mern-card-footer > a {
+        width: 29px;
+        height: 29px;
+        font-size: 15px;
     }
 
 
@@ -3078,25 +3026,15 @@ footer {
 
     .nav-links {
         position: absolute;
-
         top: 76px;
-
         left: 0;
         right: 0;
-
         display: none;
-
         flex-direction: column;
-
         padding: 20px 4%;
-
         background: var(--bg);
-
-        border-bottom:
-            1px solid var(--border);
-
-        box-shadow:
-            0 15px 30px rgba(0, 0, 0, 0.18);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
     }
 
     .nav-links.open {
@@ -3105,7 +3043,6 @@ footer {
 
     .menu-btn {
         display: block;
-
         margin-left: auto;
     }
 
@@ -3139,13 +3076,11 @@ footer {
     }
 
     .stats {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .cta {
         flex-direction: column;
-
         align-items: flex-start;
     }
 
@@ -3174,9 +3109,7 @@ footer {
 
     .website-project-preview {
         height: 230px;
-
         min-height: 230px;
-
         flex-basis: 230px;
     }
 
@@ -3187,7 +3120,6 @@ footer {
 
     .website-group {
         margin-top: 40px;
-
         margin-bottom: 50px;
     }
 
@@ -3200,11 +3132,8 @@ footer {
 
     .aa-website-carousel {
         --aa-carousel-gap: 18px;
-
         width: 100%;
-
         margin-top: 50px;
-
         margin-bottom: 50px;
     }
 
@@ -3227,76 +3156,14 @@ footer {
 
     .aa-website-carousel-card .website-project-preview {
         height: 220px;
-
         min-height: 220px;
-
         flex-basis: 220px;
     }
 
     .website-scroll-label {
         opacity: 1;
-
         transform:
             translate(-50%, 0);
-    }
-
-
-    /* MERN */
-
-    .mern-showcase {
-        padding: 50px 0;
-
-        margin-bottom: 50px;
-    }
-
-    .mern-showcase-grid {
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-    }
-
-    .mern-showcase-content {
-        max-width: 100%;
-    }
-
-    .mern-showcase-number {
-        top: -45px;
-
-        font-size: 75px;
-
-        letter-spacing: -5px;
-    }
-
-    .mern-showcase-content h2 {
-        font-size:
-            clamp(38px, 11vw, 52px);
-
-        letter-spacing: -2px;
-    }
-
-    .mern-showcase-description {
-        font-size: 15px;
-
-        line-height: 1.75;
-    }
-
-    .mern-showcase-card-wrapper {
-        max-width: 100%;
-
-        margin: 0 auto;
-    }
-
-    .mern-project-preview {
-        height: 330px;
-
-        min-height: 330px;
-
-        flex-basis: 330px;
-    }
-
-    .mern-showcase-card:hover {
-        transform:
-            translateY(-5px);
     }
 }
 
@@ -3321,13 +3188,11 @@ footer {
 
     .footer {
         flex-direction: column;
-
         padding: 25px 0;
     }
 
     .quick-info {
         flex-direction: column;
-
         gap: 5px;
     }
 
@@ -3337,8 +3202,132 @@ footer {
 
     .theme-btn {
         padding: 8px 10px;
-
         font-size: 12px;
+    }
+
+
+    /* =====================================================
+       MERN SHOWCASE - SMALL MOBILE
+    ===================================================== */
+
+    .mern-showcase {
+        padding: 40px 0;
+    }
+
+    .mern-showcase-grid {
+        gap: 32px;
+    }
+
+    .mern-showcase-content h2 {
+        font-size: clamp(31px, 9.5vw, 40px);
+        letter-spacing: -1.7px;
+    }
+
+    .mern-showcase-description {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .mern-showcase-tech {
+        gap: 6px;
+    }
+
+    .mern-showcase-tech span {
+        padding: 6px 9px;
+        font-size: 8px;
+    }
+
+    .mern-showcase-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .mern-showcase-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mern-showcase-label {
+        text-align: center;
+        font-size: 9px;
+    }
+
+    .mern-showcase-card-wrapper {
+        width: 100%;
+    }
+
+    .mern-showcase-card {
+        border-radius: 10px;
+    }
+
+    .mern-card-top {
+        gap: 7px;
+        padding: 0 9px;
+    }
+
+    .mern-card-url {
+        font-size: 7px;
+    }
+
+    .mern-card-status {
+        padding: 3px 5px;
+        font-size: 5.5px;
+        letter-spacing: 0.5px;
+    }
+
+    .mern-project-preview {
+        height: 220px;
+        min-height: 220px;
+        flex-basis: 220px;
+    }
+
+    .mern-project-scroll::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .mern-project-overlay {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .mern-project-overlay span {
+        font-size: 7px;
+    }
+
+    .mern-project-overlay strong {
+        font-size: 14px;
+    }
+
+    .mern-scroll-label {
+        bottom: 9px;
+        padding: 5px 8px;
+        font-size: 8px;
+    }
+
+    .mern-scroll-label span {
+        width: 14px;
+        height: 14px;
+        font-size: 10px;
+    }
+
+    .mern-card-footer {
+        min-height: 56px;
+        padding: 9px 10px;
+    }
+
+    .mern-card-info span {
+        font-size: 6.5px;
+    }
+
+    .mern-card-info strong {
+        font-size: 11px;
+    }
+
+    .mern-card-footer > a {
+        width: 27px;
+        height: 27px;
+        font-size: 14px;
     }
 
 
@@ -3346,9 +3335,7 @@ footer {
 
     .website-project-preview {
         height: 215px;
-
         min-height: 215px;
-
         flex-basis: 215px;
     }
 
@@ -3361,9 +3348,7 @@ footer {
 
     .aa-website-carousel {
         --aa-carousel-gap: 14px;
-
         margin-top: 50px;
-
         margin-bottom: 50px;
     }
 
@@ -3378,69 +3363,56 @@ footer {
 
     .aa-website-carousel-card .website-project-preview {
         height: 210px;
-
         min-height: 210px;
-
         flex-basis: 210px;
     }
+}
 
 
-    /* MERN */
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
 
     .mern-showcase {
-        padding: 50px 0;
-    }
-
-    .mern-showcase-grid {
-        gap: 45px;
+        padding: 35px 0;
     }
 
     .mern-showcase-content h2 {
-        font-size: 38px;
+        font-size: 30px;
+        letter-spacing: -1.4px;
     }
 
-    .mern-showcase-actions {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 14px;
-    }
-
-    .mern-showcase-actions .btn {
-        width: auto;
+    .mern-showcase-description {
+        font-size: 12.5px;
     }
 
     .mern-project-preview {
-        height: 300px;
-
-        min-height: 300px;
-
-        flex-basis: 300px;
-    }
-
-    .mern-card-top {
-        height: 44px;
-
-        padding: 0 13px;
+        height: 200px;
+        min-height: 200px;
+        flex-basis: 200px;
     }
 
     .mern-card-url {
-        font-size: 8px;
+        font-size: 6.5px;
     }
 
-    .mern-card-footer {
-        min-height: 70px;
-
-        padding: 13px 15px;
-    }
-
-    .mern-card-info strong {
-        font-size: 14px;
+    .mern-card-status {
+        display: none;
     }
 
     .mern-project-overlay strong {
-        font-size: 21px;
+        font-size: 13px;
+    }
+
+    .mern-card-footer {
+        min-height: 53px;
+        padding: 8px 9px;
+    }
+
+    .mern-card-info strong {
+        font-size: 10px;
     }
 }
 
@@ -3458,15 +3430,12 @@ footer {
     .section,
     html.js-reveal-enabled .section {
         opacity: 1;
-
         transform: none;
-
         transition: none;
     }
 
     html.js-reveal-enabled .section.is-visible {
         opacity: 1;
-
         transform: none;
     }
 
@@ -3477,9 +3446,7 @@ footer {
     .mern-showcase-content,
     .mern-showcase-card-wrapper {
         animation: none !important;
-
         opacity: 1;
-
         transform: none;
     }
 
@@ -3494,27 +3461,12 @@ footer {
     *::before,
     *::after {
         transition-duration: 0.01ms !important;
-
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
     }
 }
 
-
-/* =========================================================
-   LOGO SIZE
-========================================================= */
-
-.logo {
-    max-width: 200px;
-}
-
-.footer-logo {
-    max-width: 200px;
-}
-
-
+/* ``` */
 /* =========================================================
    BRAND ACCENT UTILITIES
 ========================================================= */
@@ -3557,4 +3509,506 @@ footer {
 
     filter:
         drop-shadow(0 8px 18px rgba(0, 102, 217, 0.25)) drop-shadow(0 5px 15px rgba(255, 106, 0, 0.15));
+}
+
+/* =========================================================
+   WEBSITE CARD PREVIEW
+========================================================= */
+
+.website-project-preview {
+    position: relative;
+
+    display: block;
+
+    flex: 0 0 220px;
+
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg,
+            var(--surface),
+            rgba(0, 102, 217, 0.04));
+
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   WEBSITE IMAGE SCROLL AREA
+========================================================= */
+
+.website-image-scroll {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--accent-blue) rgba(255, 255, 255, 0.08);
+
+    overscroll-behavior: contain;
+
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   CUSTOM IMAGE SCROLLBAR - WEBKIT
+========================================================= */
+
+.website-image-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.website-image-scroll::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+}
+
+.website-image-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange));
+
+    box-shadow:
+        0 0 8px rgba(0, 136, 255, 0.35);
+}
+
+.website-image-scroll::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange-bright));
+
+    box-shadow:
+        0 0 12px rgba(255, 106, 0, 0.55);
+}
+
+
+/* =========================================================
+   WEBSITE IMAGE
+========================================================= */
+
+.website-image-preview {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: top center;
+
+    background: var(--surface);
+
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    transition:
+        transform 0.6s var(--reveal-easing),
+        filter 0.4s ease;
+}
+
+
+/*
+   Slight zoom on card hover.
+   Transform origin stays at the top so the
+   website screenshot remains natural.
+*/
+
+.website-project:hover .website-image-preview {
+    filter:
+        brightness(0.96) saturate(1.05);
+}
+
+
+/* =========================================================
+   REMOVE IMAGE EDGES
+========================================================= */
+
+.website-project-preview::before,
+.website-project-preview::after,
+.website-image-preview::before,
+.website-image-preview::after {
+    display: none !important;
+
+    content: none !important;
+}
+
+
+/* =========================================================
+   PREVIEW PLACEHOLDER
+========================================================= */
+
+.website-preview-placeholder {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background:
+        linear-gradient(135deg,
+            var(--card),
+            var(--surface));
+
+    color: var(--dim);
+
+    font-size: 11px;
+
+    z-index: 3;
+}
+
+.preview-placeholder-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: var(--accent-blue);
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BOTTOM FADE
+========================================================= */
+
+.website-preview-fade {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 70px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            rgba(2, 7, 15, 0.92));
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR INDICATOR
+========================================================= */
+
+.website-scrollbar {
+    position: absolute;
+
+    top: 12px;
+    right: 7px;
+    bottom: 12px;
+
+    width: 3px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.website-scrollbar-thumb {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 3px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange));
+
+    box-shadow:
+        0 0 8px rgba(0, 136, 255, 0.4);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.website-project:hover .website-scrollbar-thumb {
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange-bright));
+
+    box-shadow:
+        0 0 12px rgba(255, 106, 0, 0.55);
+}
+
+
+/* =========================================================
+   SCROLL LABEL
+========================================================= */
+
+.website-scroll-label {
+    position: absolute;
+
+    left: 50%;
+    bottom: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(3, 8, 16, 0.78);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    z-index: 25;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, 10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.website-project:hover .website-scroll-label {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+.website-scroll-label span {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CAROUSEL IMAGE PREVIEW
+========================================================= */
+
+.aa-website-carousel-card .website-project-preview {
+    flex:
+        0 0 205px;
+
+    width: 100%;
+
+    height: 205px;
+    min-height: 205px;
+
+    overflow: hidden !important;
+
+    background: var(--surface);
+
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.aa-website-carousel-card .website-image-scroll {
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--accent-blue) rgba(255, 255, 255, 0.08);
+}
+
+.aa-website-carousel-card .website-image-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.aa-website-carousel-card .website-image-scroll::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+}
+
+.aa-website-carousel-card .website-image-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange));
+
+    box-shadow:
+        0 0 8px rgba(0, 136, 255, 0.4);
+}
+
+.aa-website-carousel-card .website-image-scroll::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(to bottom,
+            var(--accent-blue),
+            var(--accent-orange-bright));
+
+    box-shadow:
+        0 0 12px rgba(255, 106, 0, 0.55);
+}
+
+.aa-website-carousel-card .website-image-preview {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: top center;
+}
+
+
+/* =========================================================
+   MOBILE WEBSITE PREVIEW
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .website-project-preview {
+        height: 230px;
+
+        min-height: 230px;
+
+        flex-basis: 230px;
+    }
+
+    .website-image-scroll {
+        scrollbar-width: thin;
+    }
+
+    .website-scroll-label {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+    }
+
+    .aa-website-carousel-card .website-project-preview {
+        height: 220px;
+
+        min-height: 220px;
+
+        flex-basis: 220px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE WEBSITE PREVIEW
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .website-project-preview {
+        height: 215px;
+
+        min-height: 215px;
+
+        flex-basis: 215px;
+    }
+
+    .aa-website-carousel-card .website-project-preview {
+        height: 210px;
+
+        min-height: 210px;
+
+        flex-basis: 210px;
+    }
+}
+
+.h2title span {
+    padding-right: 15px;
 }
